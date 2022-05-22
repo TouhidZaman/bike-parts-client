@@ -5,11 +5,14 @@ import { joiResolver } from "@hookform/resolvers/joi";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../../../firebase/firebase.init";
 import { useLocation, useNavigate } from "react-router-dom";
+import useToken from "../../../../../hooks/useToken";
 
 const Login = () => {
    //Sign in with Email and Password
    const [signInWithEmailAndPassword, user, loading, error] =
       useSignInWithEmailAndPassword(auth);
+
+   const [token, tokenLoading] = useToken(user); //Inserting user to DB and getting access token
 
    //Handling Navigation
    const navigate = useNavigate();
@@ -17,10 +20,10 @@ const Login = () => {
    const from = location.state?.from.pathname || "/";
 
    useEffect(() => {
-      if (user) {
+      if (token) {
          navigate(from, { replace: true });
       }
-   }, [user, navigate, from]);
+   }, [token, navigate, from]);
 
    //Joi Validation Schema
    const schema = Joi.object({
@@ -46,7 +49,7 @@ const Login = () => {
    };
 
    //Handling loading state
-   if (loading) {
+   if (loading || tokenLoading) {
       return <p className="text-3xl text-center my-20">Loading...</p>;
    }
 

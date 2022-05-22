@@ -7,9 +7,8 @@ const useToken = (user) => {
 
     useEffect(() => {
         const getToken = async () => {
-            const displayName = user?.user?.displayName;
             const email = user?.user?.email;
-            const currentUser = { displayName, email };
+            const currentUser = { email };
             if (email) {
                 setLoading(true);
                 const { data } = await axiosInstance.put(

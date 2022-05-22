@@ -138,7 +138,7 @@ const Signup = () => {
                 )}
 
                 <input
-                    className="btn btn-active btn-primary w-full uppercase text-white bg-gradient-to-r from-secondary to-primary"
+                    className="btn btn-active btn-primary w-full max-w-lg uppercase text-white bg-gradient-to-r from-secondary to-primary"
                     type="submit"
                     value="Sign-Up"
                 />

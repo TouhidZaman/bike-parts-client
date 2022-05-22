@@ -10,6 +10,7 @@ import Users from "./components/Layout/Pages/Dashboard/Users/Users";
 import Home from "./components/Layout/Pages/Home/Home";
 import NotFound from "./components/Layout/Pages/NotFound/NotFound";
 import Portfolio from "./components/Layout/Pages/Portfolio/Portfolio";
+import RequireAdmin from "./components/Layout/Pages/RequireAdmin";
 import RequireAuth from "./components/Layout/Pages/RequireAuth";
 
 const AppRoutes = () => {
@@ -28,9 +29,16 @@ const AppRoutes = () => {
                     </RequireAuth>
                 }
             >
-                <Route index element={<Users />} />
+                <Route index element={<MyProfile />} />
+                <Route
+                    path="users"
+                    element={
+                        <RequireAdmin>
+                            <Users />
+                        </RequireAdmin>
+                    }
+                />
                 <Route path="reviews" element={<Reviews />} />
-                <Route path="profile" element={<MyProfile />} />
             </Route>
             <Route path="*" element={<NotFound />} />
         </Routes>

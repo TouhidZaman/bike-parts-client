@@ -3,9 +3,11 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./components/Layout/Pages/Auth/Login/Login";
 import Signup from "./components/Layout/Pages/Auth/Signup/Signup";
 import Blogs from "./components/Layout/Pages/Blogs/Blogs";
+import Dashboard from "./components/Layout/Pages/Dashboard/Dashboard";
 import Home from "./components/Layout/Pages/Home/Home";
 import NotFound from "./components/Layout/Pages/NotFound/NotFound";
 import Portfolio from "./components/Layout/Pages/Portfolio/Portfolio";
+import RequireAuth from "./components/Layout/Pages/RequireAuth";
 
 const AppRoutes = () => {
     return (
@@ -15,6 +17,14 @@ const AppRoutes = () => {
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="login" element={<Login />} />
             <Route path="sign-up" element={<Signup />} />
+            <Route
+                path="dashboard"
+                element={
+                    <RequireAuth>
+                        <Dashboard />
+                    </RequireAuth>
+                }
+            />
             <Route path="*" element={<NotFound />} />
         </Routes>
     );

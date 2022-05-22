@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
             <div className="drawer-content flex flex-col">
                 <Header />
                 {/* max-w-7xl mx-auto px-8 */}
-                <main className=""> 
+                <main className="mt-16"> 
                     {/*  Page content here */}
                     {children}
                 </main>

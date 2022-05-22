@@ -7,7 +7,7 @@ const SideDrawer = () => {
         <div className="drawer-side">
             <label htmlFor="side-drawer" className="drawer-overlay"></label>
 
-            <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
+            <ul className="menu p-4 overflow-y-auto w-80 bg-accent text-white">
                 <Logo className="text-2xl lg:text-3xl mb-4" />
                 {/* <!-- Sidebar content here --> */}
                 <NavigationItems />

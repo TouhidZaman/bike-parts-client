@@ -7,11 +7,15 @@ const useToken = (user) => {
 
     useEffect(() => {
         const getToken = async () => {
+            const displayName = user?.user?.displayName;
             const email = user?.user?.email;
-            const currentUser = { email };
+            const currentUser = { displayName, email };
             if (email) {
                 setLoading(true);
-                const { data } = await axiosInstance.put(`users/${email}`, currentUser);
+                const { data } = await axiosInstance.put(
+                    `users/${email}`,
+                    currentUser
+                );
                 setToken(data.accessToken);
                 localStorage.setItem("accessToken", data.accessToken);
                 setLoading(false);

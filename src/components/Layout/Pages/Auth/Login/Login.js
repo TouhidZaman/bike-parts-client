@@ -136,10 +136,10 @@ const Login = () => {
             </form>
             {/* Google sign in area  */}
             <div>
-                <div class="divider">OR</div>
+                <div className="divider">OR</div>
                 <button
                     onClick={handleGoogleAuth}
-                    class="btn btn-outline btn-primary w-full max-w-lg hover:text-white"
+                    className="btn btn-outline btn-primary w-full max-w-lg hover:text-white"
                 >
                     <FcGoogle className="mr-2 font-bold text-xl" />
                     <span className="">Sign In With Google</span>

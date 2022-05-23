@@ -6,7 +6,11 @@ import useAdmin from "../../../../hooks/useAdmin";
 
 const Dashboard = () => {
     const [user] = useAuthState(auth);
-    const [admin] = useAdmin(user);
+    const [admin, loading] = useAdmin(user);
+
+    if(loading) {
+        return "loading"
+    }
 
     return (
         <div className="drawer drawer-mobile">
@@ -29,16 +33,33 @@ const Dashboard = () => {
                 <ul className="menu py-4 lg:pt-16 overflow-y-auto w-60 bg-base-200 text-base-content">
                     {/* <!-- Sidebar content here --> */}
                     <li className="border-b border-primary">
-                        <Link to={"/dashboard"}>Profile</Link>
+                        <Link to={"/dashboard"}>My Profile</Link>
                     </li>
-                    {admin && (
-                        <li className="border-b border-primary">
-                            <Link to={"users"}>All Users</Link>
-                        </li>
+                    {admin ? (
+                        <>
+                            <li className="border-b border-primary">
+                                <Link to={"add-product"}>Add Product</Link>
+                            </li>
+                            <li className="border-b border-primary">
+                                <Link to={"manage-products"}>Manage Products</Link>
+                            </li>
+                            <li className="border-b border-primary">
+                                <Link to={"manage-orders"}>Manage Orders</Link>
+                            </li>
+                            <li className="border-b border-primary">
+                                <Link to={"manage-users"}>Manage Users</Link>
+                            </li>
+                        </>
+                    ) : (
+                        <>
+                            <li className="border-b border-primary">
+                                <Link to={"my-orders"}>My Orders</Link>
+                            </li>
+                            <li className="border-b border-primary">
+                                <Link to={"add-review"}>Add Review</Link>
+                            </li>
+                        </>
                     )}
-                    <li className="border-b border-primary">
-                        <Link to={"reviews"}>My Reviews</Link>
-                    </li>
                 </ul>
             </div>
         </div>

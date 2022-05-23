@@ -4,15 +4,19 @@ import Login from "./components/Layout/Pages/Auth/Login/Login";
 import ResetPassword from "./components/Layout/Pages/Auth/ResetPassword/ResetPassword";
 import Signup from "./components/Layout/Pages/Auth/Signup/Signup";
 import Blogs from "./components/Layout/Pages/Blogs/Blogs";
+import AddProduct from "./components/Layout/Pages/Dashboard/AddProduct/AddProduct";
 import Dashboard from "./components/Layout/Pages/Dashboard/Dashboard";
+import ManageOrders from "./components/Layout/Pages/Dashboard/ManageOrders/ManageOrders";
+import ManageProducts from "./components/Layout/Pages/Dashboard/ManageProducts/ManageProducts";
+import ManageUsers from "./components/Layout/Pages/Dashboard/ManageUsers/ManageUsers";
 import MyProfile from "./components/Layout/Pages/Dashboard/MyProfile/MyProfile";
-import Reviews from "./components/Layout/Pages/Dashboard/Reviews/Reviews";
-import Users from "./components/Layout/Pages/Dashboard/Users/Users";
+import AddReview from "./components/Layout/Pages/Dashboard/AddReview/AddReview";
 import Home from "./components/Layout/Pages/Home/Home";
 import NotFound from "./components/Layout/Pages/NotFound/NotFound";
 import Portfolio from "./components/Layout/Pages/Portfolio/Portfolio";
 import RequireAdmin from "./components/Layout/Pages/RequireAdmin";
 import RequireAuth from "./components/Layout/Pages/RequireAuth";
+import MyOrders from "./components/Layout/Pages/Dashboard/MyOrders/MyOrders";
 
 const AppRoutes = () => {
     return (
@@ -31,16 +35,46 @@ const AppRoutes = () => {
                     </RequireAuth>
                 }
             >
+                {/* Common routes */}
                 <Route index element={<MyProfile />} />
+
+                {/* User Routes  */}
+                <Route path="my-orders" element={<MyOrders />} />
+                <Route path="add-review" element={<AddReview />} />
+
+                {/* Admin Routes  */}
                 <Route
-                    path="users"
+                    path="add-product"
                     element={
                         <RequireAdmin>
-                            <Users />
+                            <AddProduct />
                         </RequireAdmin>
                     }
                 />
-                <Route path="reviews" element={<Reviews />} />
+                <Route
+                    path="manage-products"
+                    element={
+                        <RequireAdmin>
+                            <ManageProducts />
+                        </RequireAdmin>
+                    }
+                />
+                <Route
+                    path="manage-orders"
+                    element={
+                        <RequireAdmin>
+                            <ManageOrders />
+                        </RequireAdmin>
+                    }
+                />
+                <Route
+                    path="manage-users"
+                    element={
+                        <RequireAdmin>
+                            <ManageUsers />
+                        </RequireAdmin>
+                    }
+                />
             </Route>
             <Route path="*" element={<NotFound />} />
         </Routes>

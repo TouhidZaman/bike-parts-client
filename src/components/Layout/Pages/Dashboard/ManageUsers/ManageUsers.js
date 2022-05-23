@@ -3,7 +3,7 @@ import axiosInstance from "../../../../../api/axiosInstance";
 import { useQuery } from "react-query";
 import UserRow from "./UserRow/UserRow";
 
-const Users = () => {
+const ManageUsers = () => {
     const {
         isLoading,
         error,
@@ -44,4 +44,4 @@ const Users = () => {
     );
 };
 
-export default Users;
+export default ManageUsers;

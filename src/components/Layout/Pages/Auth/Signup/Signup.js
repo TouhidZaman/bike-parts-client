@@ -7,7 +7,7 @@ import {
     useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../../../../../firebase/firebase.init";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useToken from "../../../../../hooks/useToken";
 
 const Signup = () => {
@@ -61,10 +61,10 @@ const Signup = () => {
 
     return (
         <div className="rounded-lg shadow px-10 py-6 w-3/4 lg:w-1/3 mx-auto my-10">
-            <h3 className="mb-6 text-3xl text-primary text-center">Sign Up Form</h3>
+            <h3 className="mb-4 text-3xl text-primary text-center">Sign Up Form</h3>
 
             <form onSubmit={handleSubmit(handleSignUp)}>
-                <div className="mb-6">
+                <div className="mb-4">
                     <label
                         htmlFor="name"
                         className="block mb-2 text-sm font-medium text-gray-900"
@@ -72,13 +72,13 @@ const Signup = () => {
                         Your name
                     </label>
                     <input
-                        id="name"
+                        placeholder="Enter your name"
                         className="input input-bordered input-primary w-full max-w-lg"
                         {...register("name")}
                     />
                     <p className="text-red-400">{errors.name?.message}</p>
                 </div>
-                <div className="mb-6">
+                <div className="mb-4">
                     <label
                         htmlFor="email"
                         className="block mb-2 text-sm font-medium text-gray-900"
@@ -86,13 +86,13 @@ const Signup = () => {
                         Your email
                     </label>
                     <input
-                        id="email"
+                        placeholder="Enter your email"
                         className="input input-bordered input-primary w-full max-w-lg"
                         {...register("email")}
                     />
                     <p className="text-red-400">{errors.email?.message}</p>
                 </div>
-                <div className="mb-6">
+                <div className="mb-4">
                     <label
                         htmlFor="password"
                         className="block mb-2 text-sm font-medium text-gray-900"
@@ -100,14 +100,14 @@ const Signup = () => {
                         Password
                     </label>
                     <input
-                        id="password"
+                        placeholder="Enter a sweet password"
                         type="password"
                         className="input input-bordered input-primary w-full max-w-lg"
                         {...register("password")}
                     />
                     <p className="text-red-400">{errors.password?.message}</p>
                 </div>
-                <div className="flex items-start mb-6">
+                <div className="flex items-start mb-4">
                     <div className="flex items-center h-5">
                         <input
                             id="remember"
@@ -142,6 +142,12 @@ const Signup = () => {
                     type="submit"
                     value="Sign-Up"
                 />
+                <p className="text-center sm:text-left my-4 text-sm text-gray-400">
+                    Already have an account ?
+                    <Link className="px-2 font-medium text-blue-500" to={"/login"}>
+                        please login
+                    </Link>
+                </p>
             </form>
         </div>
     );

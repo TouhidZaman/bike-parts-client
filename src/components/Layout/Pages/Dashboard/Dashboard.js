@@ -3,23 +3,20 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import auth from "../../../../firebase/firebase.init";
 import useAdmin from "../../../../hooks/useAdmin";
+import Spinner from "../../../UI/Spinner/Spinner";
 
 const Dashboard = () => {
     const [user] = useAuthState(auth);
     const [admin, loading] = useAdmin(user);
-
-    if(loading) {
-        return "loading"
-    }
 
     return (
         <div className="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 {/* <!-- Page content here --> */}
-                <h3 className="text-center text-primary text-3xl lg:my-4">
+                {/* <h3 className="text-center text-primary text-3xl lg:my-4">
                     Welcome to your Dashboard
-                </h3>
+                </h3> */}
                 <Outlet />
                 {/* <label
                     htmlFor="my-drawer-2"
@@ -50,7 +47,7 @@ const Dashboard = () => {
                                 <Link to={"manage-users"}>Manage Users</Link>
                             </li>
                         </>
-                    ) : (
+                    ) : !loading ? (
                         <>
                             <li className="border-b border-primary">
                                 <Link to={"my-orders"}>My Orders</Link>
@@ -59,6 +56,8 @@ const Dashboard = () => {
                                 <Link to={"add-review"}>Add Review</Link>
                             </li>
                         </>
+                    ) : (
+                        <Spinner containerClass="" spinnerSize={'200px'}/>
                     )}
                 </ul>
             </div>

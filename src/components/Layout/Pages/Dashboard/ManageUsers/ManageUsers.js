@@ -2,6 +2,7 @@ import React from "react";
 import axiosInstance from "../../../../../api/axiosInstance";
 import { useQuery } from "react-query";
 import UserRow from "./UserRow/UserRow";
+import Spinner from "../../../../UI/Spinner/Spinner";
 
 const ManageUsers = () => {
     const {
@@ -13,13 +14,17 @@ const ManageUsers = () => {
         axiosInstance(`users`).then((response) => response.data)
     );
 
-    if (isLoading) return "Loading...";
+    if (isLoading)
+        return <Spinner containerClass="mt-24 flex justify-center" spinnerSize={"300px"} />;
 
     if (error) {
         return `Error: ${error.message}`;
     }
     return (
         <div className="overflow-x-auto px-12">
+            <h3 className="text-center text-primary text-3xl lg:my-4">
+                Manage All Users
+            </h3>
             <table className="table w-full">
                 <thead>
                     <tr>

@@ -13,7 +13,7 @@ const NavigationItems = () => {
         signOut(auth);
         localStorage.removeItem("accessToken");
     };
-    console.log(user);
+    // console.log(user);
     return (
         <>
             <li>
@@ -32,8 +32,8 @@ const NavigationItems = () => {
             </li>
 
             {user ? (
-                <div class="dropdown dropdown-hover dropdown-start lg:dropdown-end">
-                    <label tabIndex="0" class="btn btn-ghost avatar">
+                <div className="dropdown dropdown-hover dropdown-start lg:dropdown-end">
+                    <label tabIndex="0" className="btn btn-ghost avatar">
                         <div className="w-10 rounded-full">
                             <img
                                 src={
@@ -46,11 +46,11 @@ const NavigationItems = () => {
                     </label>
                     <ul
                         tabIndex="0"
-                        class="dropdown-content p-4 menu shadow bg-accent text-white rounded-box w-64"
+                        className="dropdown-content p-4 menu shadow bg-accent text-white rounded-box w-64"
                     >
                         <div className="text-center">
-                            <div class="avatar">
-                                <div class="w-24 rounded-full">
+                            <div className="avatar">
+                                <div className="w-24 rounded-full">
                                     <img
                                         src={
                                             user.photoURL ||
@@ -65,7 +65,7 @@ const NavigationItems = () => {
                         <div className="w-full border-b border-b-primary"></div>
                         <li className="">
                             <Link className="w-full" to={"/dashboard"}>
-                                <CgProfile lassName="font-bold text-xl" />
+                                <CgProfile className="font-bold text-xl" />
                                 My Profile
                             </Link>
                         </li>

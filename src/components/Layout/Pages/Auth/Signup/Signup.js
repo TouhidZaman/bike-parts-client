@@ -9,6 +9,7 @@ import {
 import auth from "../../../../../firebase/firebase.init";
 import { Link, useNavigate } from "react-router-dom";
 import useToken from "../../../../../hooks/useToken";
+import Spinner from "../../../../UI/Spinner/Spinner";
 
 const Signup = () => {
     //Create User with Email and Password
@@ -56,7 +57,7 @@ const Signup = () => {
 
     //Handling Loading state
     if (loading || updating || tokenLoading) {
-        return <p className="text-3xl text-center my-20">Loading...</p>;
+        return <Spinner containerClass="mt-24 flex justify-center" spinnerSize={'300px'}/>;
     }
 
     return (

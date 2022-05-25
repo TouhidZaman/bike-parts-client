@@ -10,6 +10,7 @@ import auth from "../../../../../firebase/firebase.init";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToken from "../../../../../hooks/useToken";
 import { FcGoogle } from "react-icons/fc";
+import Spinner from "../../../../UI/Spinner/Spinner";
 
 const Login = () => {
     //Sign in with Email and Password
@@ -58,7 +59,7 @@ const Login = () => {
 
     //Handling loading state
     if (loading || tokenLoading || gLoading) {
-        return <p className="text-3xl text-center my-20">Loading...</p>;
+        return <Spinner containerClass="mt-24 flex justify-center" spinnerSize={'300px'}/>;
     }
 
     return (

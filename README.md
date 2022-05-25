@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Bike Parts - Client (Project)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Live link
 
-## Available Scripts
+Visit Bike Parts - Client live website: [https://bike-parts-manufacturer.web.app](https://bike-parts-manufacturer.web.app)
 
-In the project directory, you can run:
+Bike Parts - Live server: [https://bike-parts-manufacturer-server.herokuapp.com/](https://bike-parts-manufacturer-server.herokuapp.com/)
 
-### `npm start`
+## Project Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Bike Parts is project for motor bike spare parts manufacturer company to manage their warehouse. where clients can place their orders and make payment and after then admin verifies the orders and shift the orders when shipment is done. Other then that clients can register and login here using email and password and also using social media. they can also update their profiles and add a review in their Dashboard. Dashboard is available for both clients and Admins. Admin can add a product or manage product and admin also can make another user an admin if he wants etc. This are the basics staffs you can do in this project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-   Frontend Technologies used in this project
+    -   react@18
+    -   react-router@6
+    -   firebase-authentication
+    -   react-firebase-hooks
+    -   axios
+    -   react-query
+    -   react-hook-form
+    -   yup-validation-schema
+    -   react-icons
+    -   tailwind-css
+    -   daisyUI
+    -   custom-hooks
+    -   sweet-alert
 
-### `npm test`
+## Project Author Info
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Author Name: Muhammad Touhiduzzaman
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Author Github Profile Link: [https://github.com/TouhidZaman](https://github.com/TouhidZaman)

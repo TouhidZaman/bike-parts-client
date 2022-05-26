@@ -58,7 +58,7 @@ const UserRow = ({ user, index, refetch }) => {
                 )}
             </td>
             <td>
-                <button className="btn btn-xs btn-error text-white">Delete</button>
+                <button className="btn btn-xs btn-warning text-white hover:bg-red-500">Delete</button>
             </td>
         </tr>
     );

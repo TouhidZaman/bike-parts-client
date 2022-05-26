@@ -8,11 +8,14 @@ const useToken = (user) => {
     useEffect(() => {
         const getToken = async () => {
             const email = user?.user?.email;
-            const currentUser = { email };
+            const name = user?.user?.displayName;
+            const image = user?.user?.photoURL;
+            const currentUser = { name, email, image };
+
             if (email) {
                 setLoading(true);
                 const { data } = await axiosInstance.put(
-                    `users/${email}`,
+                    `login/${email}`,
                     currentUser
                 );
                 setToken(data.accessToken);

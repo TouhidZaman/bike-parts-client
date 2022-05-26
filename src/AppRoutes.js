@@ -17,6 +17,7 @@ import Portfolio from "./components/Layout/Pages/Portfolio/Portfolio";
 import RequireAdmin from "./components/Layout/Pages/RequireAdmin";
 import RequireAuth from "./components/Layout/Pages/RequireAuth";
 import MyOrders from "./components/Layout/Pages/Dashboard/MyOrders/MyOrders";
+import EditProfile from "./components/Layout/Pages/Dashboard/MyProfile/EditProfile/EditProfile";
 
 const AppRoutes = () => {
     return (
@@ -41,6 +42,7 @@ const AppRoutes = () => {
                 {/* User Routes  */}
                 <Route path="my-orders" element={<MyOrders />} />
                 <Route path="add-review" element={<AddReview />} />
+                <Route path="edit-profile/:email" element={<EditProfile />} />
 
                 {/* Admin Routes  */}
                 <Route

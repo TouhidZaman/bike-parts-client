@@ -73,8 +73,8 @@ const ManageProducts = () => {
             <h3 className="text-center text-primary text-3xl mb-4">
                 Manage All Products
             </h3>
-            <div class="overflow-x-auto w-full">
-                <table class="table w-full">
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
@@ -100,7 +100,7 @@ const ManageProducts = () => {
                 </table>
             </div>
             {deleteProduct && (
-                <DeleteConfirmModal deleteButtonClicked={handleDeleteProduct} />
+                <DeleteConfirmModal deleteButtonClicked={handleDeleteProduct} title={deleteProduct.name} />
             )}
         </div>
     );

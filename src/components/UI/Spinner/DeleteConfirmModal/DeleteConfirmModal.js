@@ -1,6 +1,7 @@
 import React from "react";
+import { BsTrash } from "react-icons/bs";
 
-const DeleteConfirmModal = ({deleteButtonClicked}) => {
+const DeleteConfirmModal = ({ deleteButtonClicked, title }) => {
     return (
         <div>
             <input
@@ -16,14 +17,20 @@ const DeleteConfirmModal = ({deleteButtonClicked}) => {
                     >
                         ✕
                     </label>
-                    <h3 className="font-bold text-lg text-secondary mb-4">
-                        Are you sure ?
+                    <h3 className="font-bold text-2xl text-warning text-left mb-4 mr-2">
+                        Are you sure want to delete: {title} ?
                     </h3>
-                    <div class="modal-action">
-                        <button onClick={deleteButtonClicked} class="btn btn-error">
-                            Delete
+                    <div className="modal-action">
+                        <button
+                            onClick={deleteButtonClicked}
+                            className="btn btn-ghost text-error"
+                        >
+                            <BsTrash className="mr-1" /> Delete
                         </button>
-                        <label for="delete-confirm-modal" class="btn btn-success">
+                        <label
+                            for="delete-confirm-modal"
+                            className="btn btn-ghost text-success"
+                        >
                             Cancel
                         </label>
                     </div>

@@ -1,0 +1,33 @@
+[
+    {
+        "id": "555623dde2842f516000e98dcb7",
+        "question": "How will you improve the performance of a React Application?",
+        "answer": "There are several ways to improve performance of a react application, one of them is to stop unnecessary re-rendering and another one is to stop unnecessary data fetching every time by storing data to browsers storage and also we can use azy loading images in React to improve performance of our react application"
+    },
+    {
+        "id": "444623dde289b96ec492dc08e34",
+        "question": "What are the different ways to manage a state in a React application?",
+        "answer": "Every React component has a built-in state. This state is an object which stores the property values that belong to a component. State is able to keep data from different components in-sync because each state update re-renders all relevant components. The built-in way that React provides for setting component states is by using setState(). There are several other ways to manage state​s in React, including the use of: Hooks, React Context API, Apollo Link State"
+    },
+    {
+        "id": "444623dde28ddf8265119cf0ee94e",
+        "question": "How does prototypical inheritance work?",
+        "answer": "The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object"
+    },
+    {
+        "id": "444623dade2842f516000e98dcb7",
+        "question": "Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts",
+        "answer": "One should never update the state directly because of the this reasons: If you update it directly, calling the setState() afterward may just replace the update you made. When you directly update the state, it does not change this.state immediately. Instead, it creates a pending state transition, and accessing it after calling this method will only return the present value. You will lose control of the state across all components. your component will not re-render if you don't call setState"
+    },
+    {
+        "id": "444623dde2ew842f516000e98dcb7",
+        "question": "You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?",
+        "answer": "This required search field we can achieve by using array filter method. first we will get a single product when each iteration occurs inside the filter method, then we can access each product name using 'product.name'. then here we can check is this name matches our search text using 'includes' method. example: product.name.includes('search text'). then we will get our filtered result"
+    }
+    ,
+    {
+        "id": "444623dde2ew842f516000e98dcb7",
+        "question": "What is a unit test? Why should write unit tests?",
+        "answer": "Unit testing is a type of software testing where individual units or components of a software are tested. The purpose is to validate that each unit of the software code performs as expected. Unit Testing is done during the development (coding phase) of an application by the developers. Unit Tests isolate a section of code and verify its correctness. A unit may be an individual function, method, procedure, module, or object"
+    }
+]

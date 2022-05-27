@@ -1,16 +1,17 @@
 import React from "react";
-import Logo from "../../Logo/Logo";
-import bike from "../../../images/bike-logo.png";
 import { Link } from "react-router-dom";
+import { FaMotorcycle } from "react-icons/fa";
 
 const Footer = () => {
     return (
         <footer className="shadow-xl p-4 sm:p-6 bg-accent">
             <div className="container mx-auto px-4">
                 <div className="md:flex md:justify-between">
-                    <div className="flex flex-col items-center lg:items-start mb-6 md:mb-0">
-                        <img src={bike} className='h-20' alt="" srcset="" />
-                        <Logo className={"text-3xl pl-2"} />
+                    <div className="text-neutral-content font-bold flex flex-col items-center lg:items-start mb-6 md:mb-0">
+                        <FaMotorcycle className="text-6xl" />
+                        <h3 className="text-3xl">
+                            Bike Parts
+                        </h3>
                     </div>
                     <div className="text-center sm:text-left grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                         <div>
@@ -79,8 +80,7 @@ const Footer = () => {
                 <hr className="my-6 sm:mx-auto border-gray-700 lg:my-8" />
                 <div className="text-center sm:text-left sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm sm:text-center text-gray-400">
-                        © 2022 <Link to="/">Bike Parts</Link>. All Rights
-                        Reserved.
+                        © 2022 <Link to="/">Bike Parts</Link>. All Rights Reserved.
                     </span>
                     <div className="flex mt-4 space-x-6 justify-center sm:mt-0">
                         <a

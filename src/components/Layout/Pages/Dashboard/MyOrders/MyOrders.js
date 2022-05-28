@@ -19,7 +19,7 @@ const MyOrders = () => {
         data: orders,
         refetch,
     } = useQuery(["orders", authUser.email], () =>
-        axiosInstance(`orders/${authUser?.email}`).then(
+        axiosInstance(`my-orders/${authUser?.email}`).then(
             (response) => response.data
         )
     );

@@ -10,11 +10,14 @@ import Spinner from "../../../../UI/Spinner/Spinner";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Rating from "react-rating";
 import { FaStar } from "react-icons/fa";
+// import { useNavigate } from "react-router-dom";
 
 const AddReview = () => {
     const [authUser, authLoading] = useAuthState(auth);
     const [loading, setLoading] = useState(false);
     const [rating, setRating] = useState(null);
+    // const navigate = useNavigate();
+
 
     //Yup Validation Schema
     const schema = yup.object().shape({
@@ -56,11 +59,12 @@ const AddReview = () => {
                 if (response.data.acknowledged) {
                     Swal.fire({
                         icon: "success",
-                        title: `Review added successfully`,
+                        title: `Review added successfully, visit review section to see your review`,
                         showConfirmButton: false,
                         timer: 2500,
                     });
                     reset();
+                    // navigate("#all-reviews")
                 }
             })
             .catch((error) => {

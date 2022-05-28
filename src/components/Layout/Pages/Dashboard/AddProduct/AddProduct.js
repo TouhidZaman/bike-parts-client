@@ -15,7 +15,8 @@ const AddProduct = () => {
 
     //Yup Validation Schema
     const schema = yup.object().shape({
-        name: yup.string().required().min(10),
+        name: yup.string().required().min(10).label('Name'),
+        description: yup.string().required().min(15).label('Description'),
         availableQuantity: yup.number().typeError("Invalid available quantity"),
         minOrderQuantity: yup.number().typeError("Invalid order quantity"),
         price: yup.number().typeError("Invalid product price"),
@@ -116,11 +117,16 @@ const AddProduct = () => {
     };
 
     if (loading) {
-        return <Spinner containerClass="mt-24 flex justify-center" spinnerSize={'300px'}/>;
+        return (
+            <Spinner
+                containerClass="mt-24 flex justify-center"
+                spinnerSize={"300px"}
+            />
+        );
     }
 
     return (
-        <div className="rounded-lg shadow px-10 py-6 w-3/4 max-w-lg mx-auto my-10">
+        <div className="rounded-lg shadow px-10 py-6 w-2/3 mx-auto my-10">
             <h3 className="mb-4 text-3xl text-primary text-center">
                 Add Product Form
             </h3>
@@ -134,7 +140,15 @@ const AddProduct = () => {
                     />
                     <p className="text-red-400">{errors.name?.message}</p>
                 </div>
-                <div className="grid xl:grid-cols-2 xl:gap-6">
+                <div className="mb-4">
+                    <input
+                        placeholder="Enter product short description"
+                        className="input  input-bordered w-full"
+                        {...register("description")}
+                    />
+                    <p className="text-red-400">{errors.description?.message}</p>
+                </div>
+                <div className="grid xl:grid-cols-3 xl:gap-6">
                     <div className="mb-4">
                         <input
                             placeholder="Enter available quantity"
@@ -147,7 +161,7 @@ const AddProduct = () => {
                     </div>
                     <div className="mb-4">
                         <input
-                            placeholder="Enter minimum order quantity"
+                            placeholder="Enter order quantity"
                             className="input input-bordered w-full max-w-lg"
                             {...register("minOrderQuantity")}
                         />
@@ -155,14 +169,14 @@ const AddProduct = () => {
                             {errors.minOrderQuantity?.message}
                         </p>
                     </div>
-                </div>
-                <div className="mb-4">
-                    <input
-                        placeholder="Enter product price"
-                        className="input input-bordered w-full max-w-lg"
-                        {...register("price")}
-                    />
-                    <p className="text-red-400">{errors.price?.message}</p>
+                    <div className="mb-4">
+                        <input
+                            placeholder="Enter price"
+                            className="input input-bordered w-full max-w-lg"
+                            {...register("price")}
+                        />
+                        <p className="text-red-400">{errors.price?.message}</p>
+                    </div>
                 </div>
                 <div className="mb-4">
                     <label className="inline-block mb-2 text-gray-500">
@@ -196,11 +210,13 @@ const AddProduct = () => {
                     </div>
                     <p className="text-red-400">{errors.image?.message}</p>
                 </div>
-                <input
-                    className="btn btn-active btn-primary w-full max-w-lg uppercase text-white bg-gradient-to-r from-secondary to-primary"
-                    type="submit"
-                    value="Add Product"
-                />
+                <div className="flex justify-center my-6">
+                    <input
+                        className="btn btn-active btn-primary w-full max-w-md uppercase text-white bg-gradient-to-r from-secondary to-primary"
+                        type="submit"
+                        value="Add Product"
+                    />
+                </div>
             </form>
         </div>
     );

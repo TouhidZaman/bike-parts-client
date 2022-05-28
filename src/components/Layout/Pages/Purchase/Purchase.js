@@ -59,8 +59,8 @@ const Purchase = () => {
 
     //Handling Form submit
     const handlePlaceOrder = async (data) => {
-        alert("working");
-        // setLoading(true);
+        // alert("working");
+        setLoading(true);
         const { quantity, phone, address } = data;
         // const totalPrice = parseFloat(product?.price) * parseInt(quantity);
 
@@ -68,6 +68,7 @@ const Purchase = () => {
             productId: product?._id,
             product: product?.name,
             price: product?.price,
+            image: product?.image,
             quantity,
             phone,
             address,
@@ -92,7 +93,7 @@ const Purchase = () => {
             })
             .catch((error) => {
                 setLoading(false);
-                console.log("error from axios");
+                // console.log("error from axios");
                 if (error.response.status === 401 || error.response.status === 403) {
                     Swal.fire({
                         icon: "error",

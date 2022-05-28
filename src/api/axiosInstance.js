@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-    // baseURL: "https://bike-parts-manufacturer-server.herokuapp.com/",
+    baseURL: "https://bike-parts-manufacturer-server.herokuapp.com/",
 });
 
-axiosInstance.defaults.baseURL = 'http://localhost:5000/';
+// axiosInstance.defaults.baseURL = 'http://localhost:5000/';
 
 // Add a request interceptor
 axiosInstance.interceptors.request.use(

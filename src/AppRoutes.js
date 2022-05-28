@@ -19,6 +19,7 @@ import RequireAuth from "./components/Layout/Pages/RequireAuth";
 import MyOrders from "./components/Layout/Pages/Dashboard/MyOrders/MyOrders";
 import EditProfile from "./components/Layout/Pages/Dashboard/MyProfile/EditProfile/EditProfile";
 import Purchase from "./components/Layout/Pages/Purchase/Purchase";
+import MakePayment from "./components/Layout/Pages/Dashboard/MyOrders/MakePayment/MakePayment";
 
 const AppRoutes = () => {
     return (
@@ -47,11 +48,12 @@ const AppRoutes = () => {
             >
                 {/* Common routes */}
                 <Route index element={<MyProfile />} />
+                <Route path="edit-profile/:email" element={<EditProfile />} />
 
                 {/* User Routes  */}
                 <Route path="my-orders" element={<MyOrders />} />
                 <Route path="add-review" element={<AddReview />} />
-                <Route path="edit-profile/:email" element={<EditProfile />} />
+                <Route path="payment/:orderId" element={<MakePayment />} />
 
                 {/* Admin Routes  */}
                 <Route

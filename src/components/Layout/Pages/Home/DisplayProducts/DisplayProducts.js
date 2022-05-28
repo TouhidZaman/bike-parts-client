@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 import axiosInstance from "../../../../../api/axiosInstance";
 import Spinner from "../../../../UI/Spinner/Spinner";
 
@@ -10,7 +11,9 @@ const DisplayProducts = () => {
         error,
         data: products,
     } = useQuery(["products", limitTo], () =>
-        axiosInstance(`products?limitTo=${limitTo}`).then((response) => response.data)
+        axiosInstance(`products?limitTo=${limitTo}`).then(
+            (response) => response.data
+        )
     );
 
     if (isLoading)
@@ -77,9 +80,12 @@ const DisplayProducts = () => {
                                     </p>
                                 </div>
                                 <div class="flex justify-center mt-12">
-                                    <button class="btn btn-primary absolute bottom-4">
+                                    <Link
+                                        to={`purchase/${product._id}`}
+                                        class="btn btn-primary absolute bottom-4"
+                                    >
                                         Buy Now
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

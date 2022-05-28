@@ -18,6 +18,7 @@ import RequireAdmin from "./components/Layout/Pages/RequireAdmin";
 import RequireAuth from "./components/Layout/Pages/RequireAuth";
 import MyOrders from "./components/Layout/Pages/Dashboard/MyOrders/MyOrders";
 import EditProfile from "./components/Layout/Pages/Dashboard/MyProfile/EditProfile/EditProfile";
+import Purchase from "./components/Layout/Pages/Purchase/Purchase";
 
 const AppRoutes = () => {
     return (
@@ -28,6 +29,14 @@ const AppRoutes = () => {
             <Route path="login" element={<Login />} />
             <Route path="sign-up" element={<Signup />} />
             <Route path="reset-password" element={<ResetPassword />} />
+            <Route
+                path="purchase/:productId"
+                element={
+                    <RequireAuth>
+                        <Purchase />
+                    </RequireAuth>
+                }
+            />
             <Route
                 path="dashboard"
                 element={

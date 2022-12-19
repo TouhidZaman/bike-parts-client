@@ -4,7 +4,7 @@
 
 Visit Bike Parts - Client live website: [https://bike-parts-manufacturer.web.app](https://bike-parts-manufacturer.web.app)
 
-Bike Parts - Live server: [https://bike-parts-manufacturer-server.herokuapp.com/](https://bike-parts-manufacturer-server.herokuapp.com/)
+Bike Parts - Live server: [https://bike-parts-server.vercel.app/](https://bike-parts-server.vercel.app/)
 
 ## Project Description
 

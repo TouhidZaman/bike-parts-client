@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-    baseURL: "https://bike-parts-manufacturer-server.herokuapp.com/",
+    baseURL: "https://bike-parts-server.vercel.app/",
 });
 
 // axiosInstance.defaults.baseURL = 'http://localhost:5000/';
